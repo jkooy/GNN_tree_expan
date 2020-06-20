@@ -1,0 +1,44 @@
+2020-06-13 13:56:49,474 - train - INFO - MaskedGraphDataLoader mode: train
+	sampling_mode: 1
+	batch_size: 128
+	negative_size: 31
+	expand_factor: 50
+	cache_refresh_time: 64
+	normalize_embed: True
+2020-06-13 13:56:51,374 - train - INFO - MaskedGraphDataLoader mode: validation
+	sampling_mode: 0
+	batch_size: 128
+	negative_size: 256
+	expand_factor: 50
+	cache_refresh_time: 100000000
+	normalize_embed: True
+2020-06-13 13:56:51,399 - train - INFO - TaxoExpan(
+  (graph_propagate): PGAT(
+    (gat_layers): ModuleList(
+      (0): GATLayer(
+        (fc): Linear(in_features=300, out_features=2000, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+      (1): GATLayer(
+        (fc): Linear(in_features=2050, out_features=500, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+    )
+    (prop_position_embeddings): ModuleList(
+      (0): Embedding(3, 50)
+      (1): Embedding(3, 50)
+    )
+  )
+  (readout): WeightedMeanReadout(
+    (position_weights): Embedding(3, 1)
+  )
+  (match): BIM(
+    (W): Bilinear(in1_features=500, in2_features=250, out_features=1, bias=False)
+  )
+)
+Trainable parameters: 1755303
+2020-06-13 13:56:54,528 - trainer - WARNING - Warning: TensorboardX visualization is configured to use, but currently not installed on this machine. Please install the package by 'pip install tensorboardx' command or turn off the option in the 'config.json' file.

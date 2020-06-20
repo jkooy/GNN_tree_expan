@@ -1,0 +1,48 @@
+2020-06-16 15:58:35,281 - train - INFO - MaskedGraphDataLoader mode: train
+	sampling_mode: 1
+	batch_size: 128
+	negative_size: 31
+	expand_factor: 50
+	cache_refresh_time: 64
+	normalize_embed: True
+2020-06-16 15:58:36,941 - train - INFO - MaskedGraphDataLoader mode: validation
+	sampling_mode: 0
+	batch_size: 128
+	negative_size: 256
+	expand_factor: 50
+	cache_refresh_time: 100000000
+	normalize_embed: True
+2020-06-16 15:58:36,963 - train - INFO - TaxoExpan(
+  (graph_propagate): PGAT(
+    (gat_layers): ModuleList(
+      (0): GATLayer(
+        (fc): Linear(in_features=300, out_features=2000, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+      (1): GATLayer(
+        (fc): Linear(in_features=2050, out_features=500, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+    )
+    (prop_position_embeddings): ModuleList(
+      (0): Embedding(3, 50)
+      (1): Embedding(3, 50)
+    )
+  )
+  (readout): WeightedMeanReadout(
+    (position_weights): Embedding(3, 1)
+  )
+  (match): BIM(
+    (W): Bilinear(in1_features=500, in2_features=250, out_features=1, bias=False)
+  )
+)
+Trainable parameters: 1755303
+2020-06-16 15:58:42,147 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0616_155833/checkpoint-epoch1.pth ...
+2020-06-16 15:58:51,442 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0616_155833/checkpoint-epoch1.pth ...
+2020-06-16 15:58:56,052 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0616_155833/checkpoint-epoch1.pth ...
+2020-06-16 15:58:59,949 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0616_155833/checkpoint-epoch1.pth ...
+2020-06-16 15:59:03,339 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0616_155833/checkpoint-epoch1.pth ...

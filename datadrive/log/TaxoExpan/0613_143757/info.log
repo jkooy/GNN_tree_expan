@@ -1,0 +1,264 @@
+2020-06-13 14:37:59,383 - train - INFO - MaskedGraphDataLoader mode: train
+	sampling_mode: 1
+	batch_size: 128
+	negative_size: 31
+	expand_factor: 50
+	cache_refresh_time: 64
+	normalize_embed: True
+2020-06-13 14:38:01,135 - train - INFO - MaskedGraphDataLoader mode: validation
+	sampling_mode: 0
+	batch_size: 128
+	negative_size: 256
+	expand_factor: 50
+	cache_refresh_time: 100000000
+	normalize_embed: True
+2020-06-13 14:38:01,158 - train - INFO - TaxoExpan(
+  (graph_propagate): PGAT(
+    (gat_layers): ModuleList(
+      (0): GATLayer(
+        (fc): Linear(in_features=300, out_features=2000, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+      (1): GATLayer(
+        (fc): Linear(in_features=2050, out_features=500, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+    )
+    (prop_position_embeddings): ModuleList(
+      (0): Embedding(3, 50)
+      (1): Embedding(3, 50)
+    )
+  )
+  (readout): WeightedMeanReadout(
+    (position_weights): Embedding(3, 1)
+  )
+  (match): BIM(
+    (W): Bilinear(in1_features=500, in2_features=250, out_features=1, bias=False)
+  )
+)
+Trainable parameters: 1755303
+2020-06-13 14:40:07,725 - trainer - INFO -     epoch          : 1
+2020-06-13 14:40:07,725 - trainer - INFO -     loss           : 105.55595956389438
+2020-06-13 14:40:07,726 - trainer - INFO -     val_macro_mr   : 4.500627996858467
+2020-06-13 14:40:07,726 - trainer - INFO -     val_micro_mr   : 4.096448584261131
+2020-06-13 14:40:07,726 - trainer - INFO -     val_hit_at_1   : 0.6319983282374668
+2020-06-13 14:40:07,726 - trainer - INFO -     val_hit_at_3   : 0.8251000566282001
+2020-06-13 14:40:07,726 - trainer - INFO -     val_mrr_scaled_10: 0.9554980235753738
+2020-06-13 14:40:07,886 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch1.pth ...
+2020-06-13 14:40:07,975 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:42:14,723 - trainer - INFO -     epoch          : 2
+2020-06-13 14:42:14,723 - trainer - INFO -     loss           : 62.82088573691771
+2020-06-13 14:42:14,723 - trainer - INFO -     val_macro_mr   : 3.6213924541170632
+2020-06-13 14:42:14,723 - trainer - INFO -     val_micro_mr   : 3.314921108630453
+2020-06-13 14:42:14,723 - trainer - INFO -     val_hit_at_1   : 0.6755923541200736
+2020-06-13 14:42:14,723 - trainer - INFO -     val_hit_at_3   : 0.840723346426379
+2020-06-13 14:42:14,723 - trainer - INFO -     val_mrr_scaled_10: 0.9622598539866933
+2020-06-13 14:42:15,030 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch2.pth ...
+2020-06-13 14:42:15,113 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:44:20,217 - trainer - INFO -     epoch          : 3
+2020-06-13 14:44:20,219 - trainer - INFO -     loss           : 51.56080381649057
+2020-06-13 14:44:20,219 - trainer - INFO -     val_macro_mr   : 3.143801773313492
+2020-06-13 14:44:20,220 - trainer - INFO -     val_micro_mr   : 2.8922425017984756
+2020-06-13 14:44:20,221 - trainer - INFO -     val_hit_at_1   : 0.7033288780188083
+2020-06-13 14:44:20,221 - trainer - INFO -     val_hit_at_3   : 0.8746410902757343
+2020-06-13 14:44:20,222 - trainer - INFO -     val_mrr_scaled_10: 0.973663842573153
+2020-06-13 14:44:20,473 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch3.pth ...
+2020-06-13 14:44:20,557 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:46:32,338 - trainer - INFO -     epoch          : 4
+2020-06-13 14:46:32,339 - trainer - INFO -     loss           : 45.99784002599028
+2020-06-13 14:46:32,339 - trainer - INFO -     val_macro_mr   : 2.7396485925099205
+2020-06-13 14:46:32,339 - trainer - INFO -     val_micro_mr   : 2.559740226746413
+2020-06-13 14:46:32,339 - trainer - INFO -     val_hit_at_1   : 0.7054253292261377
+2020-06-13 14:46:32,406 - trainer - INFO -     val_hit_at_3   : 0.8835480432873861
+2020-06-13 14:46:32,406 - trainer - INFO -     val_mrr_scaled_10: 0.9772902027798199
+2020-06-13 14:46:32,586 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch4.pth ...
+2020-06-13 14:46:32,673 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:48:48,511 - trainer - INFO -     epoch          : 5
+2020-06-13 14:48:48,512 - trainer - INFO -     loss           : 42.676960414217916
+2020-06-13 14:48:48,513 - trainer - INFO -     val_macro_mr   : 2.684506500082672
+2020-06-13 14:48:48,513 - trainer - INFO -     val_micro_mr   : 2.4969577961160097
+2020-06-13 14:48:48,513 - trainer - INFO -     val_hit_at_1   : 0.7367899484865745
+2020-06-13 14:48:48,513 - trainer - INFO -     val_hit_at_3   : 0.8859270749362377
+2020-06-13 14:48:48,513 - trainer - INFO -     val_mrr_scaled_10: 0.9775038374893708
+2020-06-13 14:48:48,601 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch5.pth ...
+2020-06-13 14:48:48,704 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:50:56,711 - trainer - INFO -     epoch          : 6
+2020-06-13 14:50:56,712 - trainer - INFO -     loss           : 40.04896325917588
+2020-06-13 14:50:56,712 - trainer - INFO -     val_macro_mr   : 2.4680608258928567
+2020-06-13 14:50:56,713 - trainer - INFO -     val_micro_mr   : 2.311309536146281
+2020-06-13 14:50:56,713 - trainer - INFO -     val_hit_at_1   : 0.7523326085037125
+2020-06-13 14:50:56,713 - trainer - INFO -     val_hit_at_3   : 0.9007359912590699
+2020-06-13 14:50:56,713 - trainer - INFO -     val_mrr_scaled_10: 0.9836012604456551
+2020-06-13 14:50:56,801 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch6.pth ...
+2020-06-13 14:50:56,889 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:53:05,915 - trainer - INFO -     epoch          : 7
+2020-06-13 14:53:05,918 - trainer - INFO -     loss           : 37.58796258808411
+2020-06-13 14:53:05,918 - trainer - INFO -     val_macro_mr   : 2.357123790922619
+2020-06-13 14:53:05,918 - trainer - INFO -     val_micro_mr   : 2.2586920077010335
+2020-06-13 14:53:05,918 - trainer - INFO -     val_hit_at_1   : 0.7380335976571211
+2020-06-13 14:53:05,918 - trainer - INFO -     val_hit_at_3   : 0.9039057251139967
+2020-06-13 14:53:05,918 - trainer - INFO -     val_mrr_scaled_10: 0.9812766938875436
+2020-06-13 14:53:06,089 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch7.pth ...
+2020-06-13 14:53:06,174 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:55:07,512 - trainer - INFO -     epoch          : 8
+2020-06-13 14:55:07,513 - trainer - INFO -     loss           : 36.583121294827805
+2020-06-13 14:55:07,513 - trainer - INFO -     val_macro_mr   : 2.61872085813492
+2020-06-13 14:55:07,514 - trainer - INFO -     val_micro_mr   : 2.510414459193092
+2020-06-13 14:55:07,514 - trainer - INFO -     val_hit_at_1   : 0.7481495736665041
+2020-06-13 14:55:07,514 - trainer - INFO -     val_hit_at_3   : 0.899502716360081
+2020-06-13 14:55:07,514 - trainer - INFO -     val_mrr_scaled_10: 0.9801904273510129
+2020-06-13 14:55:07,599 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch8.pth ...
+2020-06-13 14:57:07,625 - trainer - INFO -     epoch          : 9
+2020-06-13 14:57:07,626 - trainer - INFO -     loss           : 35.12714364848186
+2020-06-13 14:57:07,626 - trainer - INFO -     val_macro_mr   : 2.4339367869543653
+2020-06-13 14:57:07,627 - trainer - INFO -     val_micro_mr   : 2.3245986137706742
+2020-06-13 14:57:07,627 - trainer - INFO -     val_hit_at_1   : 0.751742983778672
+2020-06-13 14:57:07,627 - trainer - INFO -     val_hit_at_3   : 0.9012998969400844
+2020-06-13 14:57:07,627 - trainer - INFO -     val_mrr_scaled_10: 0.982597311275967
+2020-06-13 14:57:07,880 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch9.pth ...
+2020-06-13 14:59:07,514 - trainer - INFO -     epoch          : 10
+2020-06-13 14:59:07,515 - trainer - INFO -     loss           : 32.37329428466325
+2020-06-13 14:59:07,516 - trainer - INFO -     val_macro_mr   : 2.476918454447751
+2020-06-13 14:59:07,516 - trainer - INFO -     val_micro_mr   : 2.308603001610732
+2020-06-13 14:59:07,605 - trainer - INFO -     val_hit_at_1   : 0.7639277482449917
+2020-06-13 14:59:07,605 - trainer - INFO -     val_hit_at_3   : 0.9097086149840254
+2020-06-13 14:59:07,606 - trainer - INFO -     val_mrr_scaled_10: 0.9824082319744163
+2020-06-13 14:59:07,694 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch10.pth ...
+2020-06-13 15:01:13,509 - trainer - INFO -     epoch          : 11
+2020-06-13 15:01:13,514 - trainer - INFO -     loss           : 32.120702836931365
+2020-06-13 15:01:13,515 - trainer - INFO -     val_macro_mr   : 2.321264260912698
+2020-06-13 15:01:13,515 - trainer - INFO -     val_micro_mr   : 2.179209410304941
+2020-06-13 15:01:13,516 - trainer - INFO -     val_hit_at_1   : 0.7738372557658733
+2020-06-13 15:01:13,516 - trainer - INFO -     val_hit_at_3   : 0.9096520193416051
+2020-06-13 15:01:13,516 - trainer - INFO -     val_mrr_scaled_10: 0.9849245232773203
+2020-06-13 15:01:13,687 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch11.pth ...
+2020-06-13 15:01:13,772 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 15:03:19,210 - trainer - INFO -     epoch          : 12
+2020-06-13 15:03:19,211 - trainer - INFO -     loss           : 30.888397723129117
+2020-06-13 15:03:19,212 - trainer - INFO -     val_macro_mr   : 2.4044130291005295
+2020-06-13 15:03:19,212 - trainer - INFO -     val_micro_mr   : 2.307191170319485
+2020-06-13 15:03:19,212 - trainer - INFO -     val_hit_at_1   : 0.7506530446180059
+2020-06-13 15:03:19,212 - trainer - INFO -     val_hit_at_3   : 0.912599776632082
+2020-06-13 15:03:19,212 - trainer - INFO -     val_mrr_scaled_10: 0.9824517823058727
+2020-06-13 15:03:19,304 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch12.pth ...
+2020-06-13 15:05:17,610 - trainer - INFO -     epoch          : 13
+2020-06-13 15:05:17,611 - trainer - INFO -     loss           : 29.529805453782227
+2020-06-13 15:05:17,612 - trainer - INFO -     val_macro_mr   : 2.259442222635582
+2020-06-13 15:05:17,612 - trainer - INFO -     val_micro_mr   : 2.150963642222418
+2020-06-13 15:05:17,612 - trainer - INFO -     val_hit_at_1   : 0.7695505180240712
+2020-06-13 15:05:17,612 - trainer - INFO -     val_hit_at_3   : 0.9145128224927028
+2020-06-13 15:05:17,613 - trainer - INFO -     val_mrr_scaled_10: 0.9858594275287894
+2020-06-13 15:05:17,785 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch13.pth ...
+2020-06-13 15:05:17,867 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 15:07:12,411 - trainer - INFO -     epoch          : 14
+2020-06-13 15:07:12,414 - trainer - INFO -     loss           : 28.923751049435015
+2020-06-13 15:07:12,414 - trainer - INFO -     val_macro_mr   : 2.2414286747685184
+2020-06-13 15:07:12,415 - trainer - INFO -     val_micro_mr   : 2.1682916053153716
+2020-06-13 15:07:12,415 - trainer - INFO -     val_hit_at_1   : 0.7798181361048511
+2020-06-13 15:07:12,415 - trainer - INFO -     val_hit_at_3   : 0.917518583806662
+2020-06-13 15:07:12,415 - trainer - INFO -     val_mrr_scaled_10: 0.9858275236406664
+2020-06-13 15:07:12,598 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch14.pth ...
+2020-06-13 15:07:12,697 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 15:09:08,116 - trainer - INFO -     epoch          : 15
+2020-06-13 15:09:08,118 - trainer - INFO -     loss           : 27.804364666496355
+2020-06-13 15:09:08,205 - trainer - INFO -     val_macro_mr   : 2.3510675533234124
+2020-06-13 15:09:08,205 - trainer - INFO -     val_micro_mr   : 2.1950120925918344
+2020-06-13 15:09:08,206 - trainer - INFO -     val_hit_at_1   : 0.7618028336878889
+2020-06-13 15:09:08,206 - trainer - INFO -     val_hit_at_3   : 0.9141418156501124
+2020-06-13 15:09:08,206 - trainer - INFO -     val_mrr_scaled_10: 0.9862709563884706
+2020-06-13 15:09:08,294 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch15.pth ...
+2020-06-13 15:11:08,214 - trainer - INFO -     epoch          : 16
+2020-06-13 15:11:08,215 - trainer - INFO -     loss           : 27.14733868530116
+2020-06-13 15:11:08,216 - trainer - INFO -     val_macro_mr   : 2.526693483382936
+2020-06-13 15:11:08,216 - trainer - INFO -     val_micro_mr   : 2.4070116003389623
+2020-06-13 15:11:08,305 - trainer - INFO -     val_hit_at_1   : 0.7700986595501365
+2020-06-13 15:11:08,306 - trainer - INFO -     val_hit_at_3   : 0.9209157412310995
+2020-06-13 15:11:08,306 - trainer - INFO -     val_mrr_scaled_10: 0.9818775509202521
+2020-06-13 15:11:08,398 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch16.pth ...
+2020-06-13 15:13:05,408 - trainer - INFO -     epoch          : 17
+2020-06-13 15:13:05,409 - trainer - INFO -     loss           : 26.726735518150722
+2020-06-13 15:13:05,409 - trainer - INFO -     val_macro_mr   : 2.3241631531084654
+2020-06-13 15:13:05,409 - trainer - INFO -     val_micro_mr   : 2.170426017024925
+2020-06-13 15:13:05,409 - trainer - INFO -     val_hit_at_1   : 0.7755429911758143
+2020-06-13 15:13:05,410 - trainer - INFO -     val_hit_at_3   : 0.9217531063406504
+2020-06-13 15:13:05,410 - trainer - INFO -     val_mrr_scaled_10: 0.9855951844443542
+2020-06-13 15:13:05,514 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch17.pth ...
+2020-06-13 15:14:58,313 - trainer - INFO -     epoch          : 18
+2020-06-13 15:14:58,314 - trainer - INFO -     loss           : 25.82430759410268
+2020-06-13 15:14:58,314 - trainer - INFO -     val_macro_mr   : 2.35183521412037
+2020-06-13 15:14:58,314 - trainer - INFO -     val_micro_mr   : 2.2247664801292526
+2020-06-13 15:14:58,314 - trainer - INFO -     val_hit_at_1   : 0.7656818051874149
+2020-06-13 15:14:58,314 - trainer - INFO -     val_hit_at_3   : 0.9123174970625625
+2020-06-13 15:14:58,314 - trainer - INFO -     val_mrr_scaled_10: 0.9840650548283261
+2020-06-13 15:14:58,480 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch18.pth ...
+2020-06-13 15:16:57,805 - trainer - INFO -     epoch          : 19
+2020-06-13 15:16:57,806 - trainer - INFO -     loss           : 22.290982686367233
+2020-06-13 15:16:57,806 - trainer - INFO -     val_macro_mr   : 2.1794909474206348
+2020-06-13 15:16:57,806 - trainer - INFO -     val_micro_mr   : 2.1168679916202398
+2020-06-13 15:16:57,806 - trainer - INFO -     val_hit_at_1   : 0.7842421384600383
+2020-06-13 15:16:57,807 - trainer - INFO -     val_hit_at_3   : 0.9249861266407278
+2020-06-13 15:16:57,807 - trainer - INFO -     val_mrr_scaled_10: 0.9864387144628948
+2020-06-13 15:16:57,893 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch19.pth ...
+2020-06-13 15:16:57,985 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 15:18:53,709 - trainer - INFO -     epoch          : 20
+2020-06-13 15:18:53,711 - trainer - INFO -     loss           : 21.330334510999858
+2020-06-13 15:18:53,711 - trainer - INFO -     val_macro_mr   : 2.0898115079365076
+2020-06-13 15:18:53,711 - trainer - INFO -     val_micro_mr   : 1.9875033759641514
+2020-06-13 15:18:53,712 - trainer - INFO -     val_hit_at_1   : 0.7876821520022418
+2020-06-13 15:18:53,712 - trainer - INFO -     val_hit_at_3   : 0.9292022792678483
+2020-06-13 15:18:53,712 - trainer - INFO -     val_mrr_scaled_10: 0.9887728688666797
+2020-06-13 15:18:53,886 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch20.pth ...
+2020-06-13 15:18:53,998 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 15:20:46,809 - trainer - INFO -     epoch          : 21
+2020-06-13 15:20:46,812 - trainer - INFO -     loss           : 20.381340407833612
+2020-06-13 15:20:46,813 - trainer - INFO -     val_macro_mr   : 2.104825768849206
+2020-06-13 15:20:46,813 - trainer - INFO -     val_micro_mr   : 2.0081173340841523
+2020-06-13 15:20:46,814 - trainer - INFO -     val_hit_at_1   : 0.7936323703035341
+2020-06-13 15:20:46,814 - trainer - INFO -     val_hit_at_3   : 0.9352463144865004
+2020-06-13 15:20:46,815 - trainer - INFO -     val_mrr_scaled_10: 0.9881424670807203
+2020-06-13 15:20:46,990 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch21.pth ...
+2020-06-13 15:22:48,306 - trainer - INFO -     epoch          : 22
+2020-06-13 15:22:48,307 - trainer - INFO -     loss           : 20.70603954914919
+2020-06-13 15:22:48,307 - trainer - INFO -     val_macro_mr   : 2.0998335710152114
+2020-06-13 15:22:48,308 - trainer - INFO -     val_micro_mr   : 2.070639121777976
+2020-06-13 15:22:48,308 - trainer - INFO -     val_hit_at_1   : 0.7839624217191877
+2020-06-13 15:22:48,308 - trainer - INFO -     val_hit_at_3   : 0.926548492155787
+2020-06-13 15:22:48,308 - trainer - INFO -     val_mrr_scaled_10: 0.9867747687203996
+2020-06-13 15:22:48,395 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch22.pth ...
+2020-06-13 15:24:45,630 - trainer - INFO -     epoch          : 23
+2020-06-13 15:24:45,631 - trainer - INFO -     loss           : 20.511827267322342
+2020-06-13 15:24:45,631 - trainer - INFO -     val_macro_mr   : 2.0728218005952384
+2020-06-13 15:24:45,631 - trainer - INFO -     val_micro_mr   : 1.9422822381725386
+2020-06-13 15:24:45,631 - trainer - INFO -     val_hit_at_1   : 0.8036019659448511
+2020-06-13 15:24:45,631 - trainer - INFO -     val_hit_at_3   : 0.9342080165237905
+2020-06-13 15:24:45,631 - trainer - INFO -     val_mrr_scaled_10: 0.9883043782409405
+2020-06-13 15:24:45,874 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch23.pth ...
+2020-06-13 15:24:45,963 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 15:26:43,711 - trainer - INFO -     epoch          : 24
+2020-06-13 15:26:43,712 - trainer - INFO -     loss           : 20.738947774946077
+2020-06-13 15:26:43,713 - trainer - INFO -     val_macro_mr   : 2.157511160714286
+2020-06-13 15:26:43,713 - trainer - INFO -     val_micro_mr   : 2.2484044567731716
+2020-06-13 15:26:43,713 - trainer - INFO -     val_hit_at_1   : 0.7950655876886084
+2020-06-13 15:26:43,714 - trainer - INFO -     val_hit_at_3   : 0.9253544235283181
+2020-06-13 15:26:43,714 - trainer - INFO -     val_mrr_scaled_10: 0.9812013652132825
+2020-06-13 15:26:43,800 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch24.pth ...
+2020-06-13 15:28:47,610 - trainer - INFO -     epoch          : 25
+2020-06-13 15:28:47,613 - trainer - INFO -     loss           : 20.40748907364521
+2020-06-13 15:28:47,613 - trainer - INFO -     val_macro_mr   : 2.110346447172619
+2020-06-13 15:28:47,613 - trainer - INFO -     val_micro_mr   : 2.0435023560983407
+2020-06-13 15:28:47,614 - trainer - INFO -     val_hit_at_1   : 0.7886536840310072
+2020-06-13 15:28:47,614 - trainer - INFO -     val_hit_at_3   : 0.9304890889338198
+2020-06-13 15:28:47,614 - trainer - INFO -     val_mrr_scaled_10: 0.9864080460031529
+2020-06-13 15:28:47,788 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch25.pth ...
+2020-06-13 15:30:45,905 - trainer - INFO -     epoch          : 26
+2020-06-13 15:30:45,906 - trainer - INFO -     loss           : 20.13874020035734
+2020-06-13 15:30:45,906 - trainer - INFO -     val_macro_mr   : 2.102678519758598
+2020-06-13 15:30:45,906 - trainer - INFO -     val_micro_mr   : 2.028863605323468
+2020-06-13 15:30:45,907 - trainer - INFO -     val_hit_at_1   : 0.7964313734730003
+2020-06-13 15:30:45,907 - trainer - INFO -     val_hit_at_3   : 0.9310953112475715
+2020-06-13 15:30:45,907 - trainer - INFO -     val_mrr_scaled_10: 0.9872236846123983
+2020-06-13 15:30:46,003 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_143757/checkpoint-epoch26.pth ...

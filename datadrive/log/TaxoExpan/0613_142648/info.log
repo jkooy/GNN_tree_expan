@@ -1,0 +1,70 @@
+2020-06-13 14:26:51,046 - train - INFO - MaskedGraphDataLoader mode: train
+	sampling_mode: 1
+	batch_size: 128
+	negative_size: 31
+	expand_factor: 50
+	cache_refresh_time: 64
+	normalize_embed: True
+2020-06-13 14:26:53,011 - train - INFO - MaskedGraphDataLoader mode: validation
+	sampling_mode: 0
+	batch_size: 128
+	negative_size: 256
+	expand_factor: 50
+	cache_refresh_time: 100000000
+	normalize_embed: True
+2020-06-13 14:26:53,034 - train - INFO - TaxoExpan(
+  (graph_propagate): PGAT(
+    (gat_layers): ModuleList(
+      (0): GATLayer(
+        (fc): Linear(in_features=300, out_features=2000, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+      (1): GATLayer(
+        (fc): Linear(in_features=2050, out_features=500, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+    )
+    (prop_position_embeddings): ModuleList(
+      (0): Embedding(3, 50)
+      (1): Embedding(3, 50)
+    )
+  )
+  (readout): WeightedMeanReadout(
+    (position_weights): Embedding(3, 1)
+  )
+  (match): BIM(
+    (W): Bilinear(in1_features=500, in2_features=250, out_features=1, bias=False)
+  )
+)
+Trainable parameters: 1755303
+2020-06-13 14:29:34,324 - trainer - INFO -     epoch          : 1
+2020-06-13 14:29:34,324 - trainer - INFO -     loss           : 100.34312795855335
+2020-06-13 14:29:34,325 - trainer - INFO -     val_macro_mr   : 4.464273778521825
+2020-06-13 14:29:34,325 - trainer - INFO -     val_micro_mr   : 3.952212028915652
+2020-06-13 14:29:34,405 - trainer - INFO -     val_hit_at_1   : 0.6248810205304501
+2020-06-13 14:29:34,405 - trainer - INFO -     val_hit_at_3   : 0.8259599712738186
+2020-06-13 14:29:34,406 - trainer - INFO -     val_mrr_scaled_10: 0.9566652889800624
+2020-06-13 14:29:34,589 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_142648/checkpoint-epoch1.pth ...
+2020-06-13 14:29:34,669 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:31:54,312 - trainer - INFO -     epoch          : 2
+2020-06-13 14:31:54,314 - trainer - INFO -     loss           : 59.021847164507996
+2020-06-13 14:31:54,314 - trainer - INFO -     val_macro_mr   : 3.339457155257937
+2020-06-13 14:31:54,314 - trainer - INFO -     val_micro_mr   : 3.065083078200776
+2020-06-13 14:31:54,315 - trainer - INFO -     val_hit_at_1   : 0.6831821788182559
+2020-06-13 14:31:54,315 - trainer - INFO -     val_hit_at_3   : 0.8673898936928316
+2020-06-13 14:31:54,315 - trainer - INFO -     val_mrr_scaled_10: 0.9686907538360288
+2020-06-13 14:31:54,403 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_142648/checkpoint-epoch2.pth ...
+2020-06-13 14:31:54,490 - trainer - INFO - Saving current best: model_best.pth ...
+2020-06-13 14:34:12,408 - trainer - INFO -     epoch          : 3
+2020-06-13 14:34:12,410 - trainer - INFO -     loss           : 49.38127682872654
+2020-06-13 14:34:12,411 - trainer - INFO -     val_macro_mr   : 2.896117931547619
+2020-06-13 14:34:12,411 - trainer - INFO -     val_micro_mr   : 2.6913175493832506
+2020-06-13 14:34:12,411 - trainer - INFO -     val_hit_at_1   : 0.7071777592896193
+2020-06-13 14:34:12,411 - trainer - INFO -     val_hit_at_3   : 0.8774045440143825
+2020-06-13 14:34:12,412 - trainer - INFO -     val_mrr_scaled_10: 0.97604060008349
+2020-06-13 14:34:12,580 - trainer - INFO - Saving checkpoint: datadrive/models/TaxoExpan/0613_142648/checkpoint-epoch3.pth ...
+2020-06-13 14:34:12,673 - trainer - INFO - Saving current best: model_best.pth ...

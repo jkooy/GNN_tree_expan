@@ -1,0 +1,41 @@
+2020-06-13 16:33:45,415 - test - INFO - no need to save case study results
+2020-06-13 16:33:46,948 - test - INFO - MaskedGraphDataLoader mode: test
+	sampling_mode: 0
+	batch_size: 1
+	negative_size: 20
+	expand_factor: 50
+	cache_refresh_time: 100000000
+	normalize_embed: True
+2020-06-13 16:33:46,966 - test - INFO - TaxoExpan(
+  (graph_propagate): PGAT(
+    (gat_layers): ModuleList(
+      (0): GATLayer(
+        (fc): Linear(in_features=300, out_features=2000, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+      (1): GATLayer(
+        (fc): Linear(in_features=2050, out_features=500, bias=False)
+        (feat_drop): Dropout(p=0.1, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+    )
+    (prop_position_embeddings): ModuleList(
+      (0): Embedding(3, 50)
+      (1): Embedding(3, 50)
+    )
+  )
+  (readout): WeightedMeanReadout(
+    (position_weights): Embedding(3, 1)
+  )
+  (match): BIM(
+    (W): Bilinear(in1_features=500, in2_features=250, out_features=1, bias=False)
+  )
+)
+Trainable parameters: 1755303
+2020-06-13 16:33:46,967 - test - INFO - Loading checkpoint: datadrive/models/TaxoExpan/0613_153247/checkpoint-epoch31.pth ...
+2020-06-13 16:33:49,449 - test - INFO - Number of queries: 2450
+2020-06-13 16:33:57,648 - test - INFO - Small batch mode
+2020-06-13 16:34:06,197 - test - INFO - {'macro_mr': 83.16773596938775, 'micro_mr': 83.16773596938775, 'hit_at_1': 0.21222095723054846, 'hit_at_3': 0.3882710608657525, 'mrr_scaled_10': 0.6956429866868622, 'test_topk': -1}
